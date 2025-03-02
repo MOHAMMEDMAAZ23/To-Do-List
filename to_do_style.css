@@ -14,13 +14,13 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-image: url("minimalistic-pastel-colors-line-style-background_1017-43163.avif");
+    background-image: url("Green_bg.jpg");
     background-size:cover;
   }
   
   /* Container */
   #todo-container {
-    background: white;
+    background-image: linear-gradient(to right, rgb(0, 37, 25), rgb(42, 255, 205));
     padding: 20px;
     width: 90%;
     max-width: 400px;
@@ -28,13 +28,17 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     border: 1px solid #E2DED7;
   }
+
+  h2{
+    color: rgb(255, 255, 255);
+  }
   
   /* Header */
   h1 {
     text-align: center;
     font-size: 24px;
     font-weight: 600;
-    color: #1C1C1E;
+    color: rgb(255, 255, 255);
   }
   
   /* Input Field */
@@ -58,8 +62,8 @@ body {
   /* Add Button */
   #input-button {
     padding: 10px 15px;
-    background: #FFD700; /* Gold Button */
-    color: #333;
+    background: rgb(0, 88, 61); /* Gold Button */
+    color: rgb(255, 255, 255);
     border: none;
     border-radius: 8px;
     font-weight: bold;
@@ -68,7 +72,7 @@ body {
   }
   
   #input-button:hover {
-    background: #FFC107; /* Darker Gold */
+    background: rgb(0, 60, 41); /* Darker Gold */
   }
   
   /* Task List */
@@ -107,6 +111,7 @@ body {
   .task-checkbox:checked {
     background-color: #FFD700;
     border-color: #FFD700;
+    display: inline-block;
   }
   
   .task-checkbox:checked::after {
@@ -143,8 +148,8 @@ body {
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
     position: absolute;
-    right: -10px;
-    top: -10px;
+    right: 10px;
+    top: 10px;
     font-size: 20px;
     animation: sparkle 2s ease-out;
   }
@@ -167,24 +172,6 @@ body {
   }
   
   
-  /* Edit & Delete Buttons */
-  .edit-btn, .delete-btn {
-    background: none;
-    border: none;
-    color: #666;
-    font-size: 14px;
-    cursor: pointer;
-    padding: 5px;
-  }
-  
-  .edit-btn:hover {
-    color: #007AFF; /* iOS Blue */
-  }
-  
-  .delete-btn:hover {
-    color: #FF3B30; /* iOS Red */
-  }
-  
   /* Fade In Animation for Tasks */
   @keyframes fadeIn {
     from {
@@ -196,4 +183,129 @@ body {
       transform: translateY(0);
     }
   }
+  /* giving text color to completed qand uncompleted */
+  .counter-container #task-counters{
+    color: rgb(255, 255, 255);
+  }
+
+  /* NEWWWWWWWW */
+  #todo-container {
+    width: 400px;
+    max-height: 100vh; /* Prevents it from extending too much */
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    overflow: hidden; /* Ensures container doesn't extend */
+}
+
+/* Ensure task list does not exceed the container */
+#list-container {
+  max-height: 300px;
+  overflow-y: auto;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+/* Scrollbar customization */
+#list-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+#list-container::-webkit-scrollbar-thumb {
+  background: #aaa;
+  border-radius: 3px;
+}
+
+/* Task items */
+li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  position: relative;
+}
+
+/* Task content: keeps text inside the container */
+.task-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Ensure the task text does not stretch out */
+.task-content span {
+  flex-grow: 1;
+  max-width: calc(100% - 30px); /* Keep within container */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+/* Fix the checkbox size & alignment */
+.task-checkbox {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0; /* Prevents resizing */
+  cursor: pointer;
+}
+
+/* Button styles */
+.task-buttons {
+  display: flex;
+  gap: 5px;
+  margin-top: 5px;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.edit-btn,
+.delete-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+}
+
+/* Completed task style */
+.completed {
+  text-decoration: line-through;
+  border: 1px solid gray;
+}
+
+/* Fix tick mark alignment */
+.task-checkbox:checked::before {
+  display: block;
+  text-align: center;
+  line-height: 16px;
+}
+
+/* Add sparkle effect when task is checked */
+.completed::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: gold;
+  font-size: 18px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  animation: sparkle 0.6s ease-out;
+}
+
+
   

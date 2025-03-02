@@ -41,12 +41,14 @@ function createTaskElement(task, completed = false) {
     const li = document.createElement("li");
 
     li.innerHTML = `
-        <label>
+        <div class="task-content">
             <input type="checkbox" class="task-checkbox" ${completed ? "checked" : ""}>
             <span>${task}</span>
-        </label>
-        <button class="edit-btn">Edit</button>
-        <button class="delete-btn">Delete</button>
+        </div>
+        <div class="task-buttons">
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+        </div>
     `;
 
     if (completed) {
@@ -77,10 +79,11 @@ function createTaskElement(task, completed = false) {
         }
     });
 
-    saveTasks(); // Save after adding a new task
+    saveTasks();
 }
 
-// Function to add a new task
+
+// this is a Function to add a new task
 function addTask() {
     const task = inputBox.value.trim();
     if (!task) {
