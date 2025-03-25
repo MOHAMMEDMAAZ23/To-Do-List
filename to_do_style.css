@@ -45,10 +45,12 @@ body {
   }
   
   /* Input Field */
-  #todo-form {
+ 
+
+  #input-container{
     display: flex;
-    gap: 10px;
-    margin-bottom: 15px;
+    flex-direction: column;
+    
   }
   
   #input-box {
@@ -60,12 +62,13 @@ body {
     background: #F2F0EB;
     outline: none;
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+   display: inline-block;
   }
   
   /* Add Button */
   #input-button {
     padding: 10px 15px;
-    background: rgb(0, 88, 61); /* Gold Button */
+    background: rgb(0, 88, 61); /* Green Button */
     color: rgb(255, 255, 255);
     border: none;
     border-radius: 8px;
@@ -86,25 +89,22 @@ body {
   
   li {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    background: #FFF;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 12px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease-in-out, opacity 0.3s;
-    opacity: 0;
-    transform: translateY(10px);
-    animation: fadeIn 0.4s forwards;
-
-    border-bottom: 1px solid #ddd;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    max-width: 100%;
-    position: relative;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      max-width: 100%;
+      position: relative;
+      background: #fff;
+      transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+      transform-origin: center;
+      border-radius: 8px;
   }
+
+
 
 
   /* Ensure task list does not exceed the container */
